@@ -16,7 +16,7 @@ import LoginRouter from './routes/login'
 import ProductRouter from './routes/product'
 import RegisterRouter from './routes/register'
 import VoteRouter from "./routes/vote"
-import FeedBackRouter from "./routes/feedback"
+// import FeedBackRouter from "./routes/feedback"
 const PORT : string|number = process.env.PORT || 5000;
 // Initializations
 const app = express();
@@ -50,7 +50,7 @@ app.use('/add_vote', AddVote)
 app.use('/vote', VoteRouter)
 app.use('/add_userInformation', AddInformation)
 app.use('/information', InformationRouter)
-app.use('/feedback', FeedBackRouter)
+// app.use('/feedback', FeedBackRouter)
 app.use('/api', ApiRouter)
 
 
