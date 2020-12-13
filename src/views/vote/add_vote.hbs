@@ -1,4 +1,4 @@
-<div class="container mt-5" style="padding-bottom: 20%">
+<div class="container mt-5" style="padding-bottom: 20%; height: 1000px">
     <form class="login100-form validate-form" action="/add_vote" method="post" enctype="multipart/form-data">
           <div class="wrap-input100 validate-input m-b-23" data-validate="Vui lòng không để trống tên món ăn">
             <span class="label-input100">Tên món ăn</span>
@@ -43,6 +43,12 @@
             <span class="label-input100">Nhập tên đường</span>
             <input formControlName="name" class="input100" type="text" name="tenDuong"
                 placeholder="Nhập tên đường">
+            <span class="focus-input100" data-symbol="&#xf206;"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-23" data-validate="Không để trống giá tiền">
+            <span class="label-input100">Nhập giá tiền</span>
+            <input formControlName="name" class="input100" type="number" name="price"
+                placeholder="Nhập giá tiền">
             <span class="focus-input100" data-symbol="&#xf206;"></span>
         </div>
         <div class="form-group">

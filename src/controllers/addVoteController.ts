@@ -53,7 +53,8 @@ class AddVoteController {
                         coordinate: `${locationResult.lat},${locationResult.lng}`,
                         nameImage,
                         like: [],
-                        dislike: []
+                        dislike: [],
+                        price: request.body.price
                     });
                     vote.save();
                 }

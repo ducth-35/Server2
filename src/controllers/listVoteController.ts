@@ -51,8 +51,8 @@ class ListVoteController {
     }
     public async apiComment(request: Request, response: Response): Promise<void> {
         try {
-            const idComment = request.body.idComment; 
-            // const userName = request.body.userName;
+            const idComment = request.body.idComment;
+            const  idTime = request.body.idTime;
             const idUserComment = request.body.idUserComment;
             const Comment = request.body.Comment;
             const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment}});

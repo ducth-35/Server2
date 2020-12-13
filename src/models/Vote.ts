@@ -15,6 +15,7 @@ export interface Vote extends mongoose.Document {
     dislike: [string],
     cmt: [string],
     userLiked:string,
+    price: string,
 }
 
 const VoteSchema = new Schema(
@@ -33,6 +34,7 @@ const VoteSchema = new Schema(
         dislike: [String],
         cmt: [String],
         userLiked: String,
+        price: String,
     }
 );
 
