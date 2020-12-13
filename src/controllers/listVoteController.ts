@@ -52,14 +52,14 @@ class ListVoteController {
     public async apiComment(request: Request, response: Response): Promise<void> {
         try {
             const idComment = request.body.idComment;
-            const  idTime = request.body.idTime;
+            const idTime = request.body.idTime;
             const idUserComment = request.body.idUserComment;
             const Comment = request.body.Comment;
             const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment}});
             if (hasItem) {
                 response.send("Bạn đã bình luận bài viết này");
             } else {
-                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment + ": " + Comment }});
+                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment + ": " + Comment + "("+idTime+")"}});
                 response.send("Bình luận thành công ");
             }
         } catch (e) {
