@@ -59,7 +59,7 @@ class ListVoteController {
             if (hasItem) {
                 response.send("Bạn đã bình luận bài viết này");
             } else {
-                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment + ": " + Comment + "("+idTime+")"}});
+                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment}});
                 response.send("Bình luận thành công ");
             }
         } catch (e) {
