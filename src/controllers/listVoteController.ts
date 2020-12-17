@@ -55,7 +55,7 @@ class ListVoteController {
             const idTime = request.body.idTime;
             const idUserComment = request.body.idUserComment;
             const Comment = request.body.Comment;
-            const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment}});
+            const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment + Comment}});
             if (hasItem) {
                 response.send("Bạn đã bình luận bài viết này");
             } else {
