@@ -55,11 +55,11 @@ class ListVoteController {
             const idTime = request.body.idTime;
             const idUserComment = request.body.idUserComment;
             const Comment = request.body.Comment;
-            const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment + Comment}});
+            const hasItem = await VoteModel.findOne({ _id: idComment, cmt: { $in: idUserComment } });
             if (hasItem) {
                 response.send("Bạn đã bình luận bài viết này");
             } else {
-                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment}});
+                await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment + ":" + Comment +"(" + idTime +")" } });
                 response.send("Bình luận thành công ");
             }
         } catch (e) {
