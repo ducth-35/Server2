@@ -60,7 +60,7 @@ class ListVoteController {
                 response.send("Bạn đã bình luận bài viết này");
             } else {
                 await VoteModel.findByIdAndUpdate(idComment, { $addToSet: { cmt: idUserComment + ":" + Comment +"(" + idTime +")" } });
-                response.send("Bình luận thành công ");
+               response.send("Bình luận thành công ");
             }
         } catch (e) {
             response.send("Đã có lỗi xảy ra");
